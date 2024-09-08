@@ -1,3 +1,14 @@
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "5.16.1"
+    }
+  }
+}
+provider "aws" {
+  region = "ap-south-1"
+}
 module "vpc" {
   source = "./modules/vpc"
   vpc_cidr = var.vpc_cidr
